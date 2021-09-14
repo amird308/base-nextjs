@@ -1,5 +1,17 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/components/*": ["src/shared/components/*"],
+      "@/constants/*": ["src/shared/constants/*"],
+      "@/store/*": ["src/shared/store/*"],
+      "@/models/*": ["src/shared/models/*"],
+      "@/helper/*": ["src/shared/helper/*"],
+      "@/hooks/*": ["src/shared/hooks/*"],
+      "@/services/*": ["src/shared/services/*"],
+      "@/styles/*": ["src/shared/styles/*"],
+      "@/infrastructure/*": ["src/infrastructure/*"]
+    },
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,

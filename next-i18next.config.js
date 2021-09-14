@@ -1,11 +1,7 @@
-import getConfig from 'next/config';
-const {publicRuntimeConfig} = getConfig();
-export const LOCALE = publicRuntimeConfig.LOCALE;
-
 module.exports = {
     i18n: {
+        defaultLocale: 'en',
         localeDetection:false,
-        defaultLocale: LOCALE,
-        locales: ['fa','en'],
+        locales: ['en', 'fa'],
     },
 }

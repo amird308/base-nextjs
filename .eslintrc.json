@@ -1,3 +1,31 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": [
+    "next",
+    "prettier",
+    "plugin:@next/next/recommended"
+  ],
+  "rules": {
+    "react/prop-types": 0,
+    "quotes": ["error", "double"],
+    "react/display-name": 0,
+    "semi": "error",
+    "react-hooks/exhaustive-deps": "error",
+    "no-var": "error",
+    "brace-style": "error",
+    "prefer-template": "error",
+    "radix": "error",
+    "no-console": "error",
+    "space-before-blocks": "error",
+    "import/prefer-default-export": "off",
+    "no-unused-vars": "off",
+    "react/react-in-jsx-scope": "off",
+    "jsx-a11y/no-autofocus": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "import/order": "off",
+    "simple-import-sort/exports": "off",
+    "import/first": "error",
+    "import/newline-after-import": "error",
+    "import/no-duplicates": "error"
+}
 }
