@@ -3,6 +3,7 @@
     "baseUrl": ".",
     "paths": {
       "@/components/*": ["src/shared/components/*"],
+      "@/modules/*": ["src/modules/*"],
       "@/constants/*": ["src/shared/constants/*"],
       "@/store/*": ["src/shared/store/*"],
       "@/models/*": ["src/shared/models/*"],

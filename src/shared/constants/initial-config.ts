@@ -1,4 +1,4 @@
-import {IInitialConfig} from "../models/InitialConfig";
+import { IInitialConfig } from "@/models/InitialConfig";
 
 const INITIAL_CONFIG: IInitialConfig = {
     AUTHOR: "",
@@ -28,6 +28,6 @@ const INITIAL_CONFIG: IInitialConfig = {
         ar: { name: "Arabic", code: "ar", nativeName: "العربية", direction: "rtl" },
         fr: { name: "French", code: "fr", nativeName: "Français", direction: "ltr" }
     }
-}
+};
 
-export default INITIAL_CONFIG
+export default INITIAL_CONFIG;

@@ -14,4 +14,4 @@ class storageLocal {
     }
 }
 
-export default localStorage;
+export default storageLocal;
