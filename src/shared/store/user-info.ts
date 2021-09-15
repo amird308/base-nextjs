@@ -1,4 +1,4 @@
-import { atom, selector } from "recoil";
+import { atom, selector, useRecoilState } from "recoil";
 import IUserInfo from "@/store/models/user-info";
 
 const userInfo = atom<IUserInfo>({
@@ -11,8 +11,19 @@ const userInfo = atom<IUserInfo>({
     }
 });
 
-export const getUserInfo = selector<IUserInfo>({
+export const UserInfoSelector = selector<IUserInfo>({
     key: "filteredTodoListState",
     get: ({get}) =>  get(userInfo),
     set: ({set}, newValue)=> set(userInfo, newValue)
 });
+
+
+const useUserInfo = () => {
+    const [userInfo, setUserInfo] = useRecoilState(UserInfoSelector);
+    return{
+        userInfo,
+        setUserInfo
+    };
+};
+
+export default useUserInfo;
