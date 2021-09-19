@@ -6,6 +6,7 @@ import INITIAL_CONFIG from "../src/shared/constants/initial-config";
 import {useEffect} from "react";
 import BaseMaterial from "@/infrastructure/components/base-material";
 import {RecoilRoot} from "recoil";
+import Initial from "@/infrastructure/components/initial";
 
 interface IMyAppExtensionProps extends AppProps {
     locale: {
@@ -30,7 +31,9 @@ function MyApp({locale, Component, pageProps}: IMyAppExtensionProps) {
     return (
         <RecoilRoot>
             <BaseMaterial>
+                <Initial>
                 <Component {...pageProps} />
+                </Initial>
             </BaseMaterial>
         </RecoilRoot>
     );

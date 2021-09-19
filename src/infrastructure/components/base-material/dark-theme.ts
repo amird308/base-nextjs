@@ -1,6 +1,6 @@
 import {createTheme} from "@material-ui/core";
 
-export const mainTheme = createTheme({
+const darkTheme = createTheme({
     // TODO set form config
     // direction: "rtl",
     props: {
@@ -22,12 +22,10 @@ export const mainTheme = createTheme({
         }
     },
     palette: {
-        background: {
-            default: "#F2F2F2"
-        },
+        type: "dark",
         primary: {
-            main: "#ed303d",
-            light: "rgba(237,48,64,0.10)",
+            main: "#F0515E",
+            light: "rgba(237,48,64,0.15)",
             "100": "#f0505b",
             "200": "#f1606a"
         },
@@ -67,6 +65,11 @@ export const mainTheme = createTheme({
         }
     },
     overrides: {
+        MuiPaper: {
+            root:{
+                boxShadow: "none !important"
+            }
+        },
         MuiIcon: {
             fontSizeSmall: {
                 fontSize: 14
@@ -77,12 +80,12 @@ export const mainTheme = createTheme({
         },
         MuiAppBar: {
             root: {
-                borderBottom: "1px solid #E6E6E6",
-                color: "#2F2F2F !important",
+                borderBottom: "1px solid #424242",
+                color: "#FFFFFF !important",
                 boxShadow: "none"
             },
             colorPrimary: {
-                backgroundColor: "#ffffff"
+                backgroundColor: "#424242"
             }
         },
         MuiContainer: {
@@ -155,3 +158,5 @@ export const mainTheme = createTheme({
 /*        fontFamily: "yekanbakh"*/
     }
 });
+
+export default darkTheme;

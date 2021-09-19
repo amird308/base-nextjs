@@ -3,11 +3,9 @@ import INITIAL_CONFIG from "@/constants/initial-config";
 import { useRouter } from "next/dist/client/router";
 import storageLocal from "@/helper/storage-local";
 
-
 const useLanguage = () => {
     const router = useRouter();
     const { i18n } = useTranslation();
-
     //@ts-ignore
     const locales: string[] = i18n?.options?.locales || [];
 
