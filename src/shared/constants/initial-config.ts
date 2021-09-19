@@ -1,4 +1,4 @@
-import { IInitialConfig } from "@/models/InitialConfig";
+import { IInitialConfig } from "@/models/initial-config";
 
 const INITIAL_CONFIG: IInitialConfig = {
     AUTHOR: "",

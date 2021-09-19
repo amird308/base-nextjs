@@ -1,5 +1,5 @@
 import { atom } from "recoil";
-import IApp from "@/models/store/app";
+import IApp from "./models/app";
 
 const appState = atom<IApp>({
     key: "appState",

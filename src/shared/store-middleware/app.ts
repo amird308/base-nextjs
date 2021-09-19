@@ -1,5 +1,5 @@
 import {useRecoilState} from "recoil";
-import appState from "../app";
+import appState from "../../store/app";
 
 const useAppStore = () => {
     const [app, setApp] = useRecoilState(appState);

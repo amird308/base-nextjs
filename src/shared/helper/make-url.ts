@@ -3,8 +3,8 @@ const makeUrl = (url: string, data: Record<string, any>) => {
         if (!data.hasOwnProperty(key)) {
             continue;
         }
-        url = url.replace("{" + key + "}", data[key]);
+        url = url.replace(`{${  key  }}`, data[key]);
     }
     return url;
-}
-export default makeUrl
+};
+export default makeUrl;
