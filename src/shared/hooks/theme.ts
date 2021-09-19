@@ -1,4 +1,4 @@
-import useAppStore from "../store-middleware/app";
+import useAppStore from "@/store/middleware-hook/app";
 
 const useTheme = () => {
     const appStore = useAppStore();

@@ -1,7 +1,8 @@
+import appState from "@/store/app";
 import {useRecoilState} from "recoil";
-import appState from "../../store/app";
+import IAppMiddleware from "@/models/middleware-store/app";
 
-const useAppStore = () => {
+const useAppMiddleware = ():IAppMiddleware => {
     const [app, setApp] = useRecoilState(appState);
 
     const toggleTheme = () => {
@@ -9,8 +10,8 @@ const useAppStore = () => {
     };
     return{
         theme: app.theme,
-        toggleTheme,
+        toggleTheme: toggleTheme,
     };
 };
 
-export default useAppStore;
+export default useAppMiddleware;
