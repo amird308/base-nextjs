@@ -7,6 +7,7 @@ import {useEffect} from "react";
 import BaseMaterial from "@/infrastructure/components/base-material";
 import {RecoilRoot} from "recoil";
 import Initial from "@/infrastructure/components/initial";
+import Head from "next/head";
 
 interface IMyAppExtensionProps extends AppProps {
     locale: {
@@ -21,21 +22,21 @@ function MyApp({locale, Component, pageProps}: IMyAppExtensionProps) {
         document.body.dir = locale.direction;
     }
 
-    useEffect(() => {
-        const jssStyles = document.querySelector("#jss-server-side");
-        if (jssStyles) {
-            jssStyles?.parentElement?.removeChild(jssStyles);
-        }
-    }, []);
 
     return (
-        <RecoilRoot>
-            <BaseMaterial>
-                <Initial>
-                <Component {...pageProps} />
-                </Initial>
-            </BaseMaterial>
-        </RecoilRoot>
+        <>
+            <Head>
+                <title>My page</title>
+                <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
+            </Head>
+            <RecoilRoot>
+                <BaseMaterial>
+                    <Initial>
+                        <Component {...pageProps} />
+                    </Initial>
+                </BaseMaterial>
+            </RecoilRoot></>
+
     );
 }
 

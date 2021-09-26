@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import {create} from "jss";
 import rtl from "jss-rtl";
 import useLanguage from "@/hooks/Language";
@@ -15,16 +15,14 @@ interface IBaseMaterial {
 }
 
 const BaseMaterial = (props: IBaseMaterial) => {
+
     const language = useLanguage();
     const theme = useTheme();
     const direction = language.direction;
     const currentTheme = {...theme.currentTheme==="dark"?darkTheme:lightTheme};
     currentTheme.direction = direction;
-    /*    const generateClassName = createGenerateClassName(
-            disableGlobal: true
-        });*/
+
     return (
-        /*<StylesProvider generateClassName={generateClassName} jss={jss}>*/
         <StylesProvider jss={jss}>
             <ThemeProvider theme={currentTheme}>
                 <CssBaseline/>

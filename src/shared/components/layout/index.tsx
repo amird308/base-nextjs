@@ -28,7 +28,7 @@ const Layout: FC = (props) => {
                     <Typography variant="h6" noWrap>
                         hi man
                     </Typography>
-                    <Box>
+                    <Box p={2}>
                         <IconButton>
                             <Badge badgeContent={4} color="secondary">
                                 <Icon ltrIcon={"notifications_none"}/>
