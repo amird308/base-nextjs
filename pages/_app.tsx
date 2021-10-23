@@ -1,13 +1,15 @@
-import App from "next/app";
 import type {AppContext, AppProps} from "next/app";
+import App from "next/app";
 import {appWithTranslation} from "next-i18next";
-import storageCookie from "../src/shared/helper/storage-cookie";
-import INITIAL_CONFIG from "../src/shared/constants/initial-config";
-import {useEffect} from "react";
+import storageCookie from "@/helper/storage-cookie";
+import INITIAL_CONFIG from "@/constants/initial-config";
 import BaseMaterial from "@/infrastructure/components/base-material";
 import {RecoilRoot} from "recoil";
 import Initial from "@/infrastructure/components/initial";
 import Head from "next/head";
+
+// style
+import "@/styles/css/main.sass";
 
 interface IMyAppExtensionProps extends AppProps {
     locale: {
@@ -22,12 +24,11 @@ function MyApp({locale, Component, pageProps}: IMyAppExtensionProps) {
         document.body.dir = locale.direction;
     }
 
-
     return (
         <>
             <Head>
                 <title>My page</title>
-                <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
+                <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width"/>
             </Head>
             <RecoilRoot>
                 <BaseMaterial>
@@ -35,8 +36,8 @@ function MyApp({locale, Component, pageProps}: IMyAppExtensionProps) {
                         <Component {...pageProps} />
                     </Initial>
                 </BaseMaterial>
-            </RecoilRoot></>
-
+            </RecoilRoot>
+        </>
     );
 }
 

@@ -11,6 +11,7 @@
       "@/hooks/*": ["src/shared/hooks/*"],
       "@/services/*": ["src/shared/services/*"],
       "@/styles/*": ["src/shared/styles/*"],
+      "@/data/*": ["src/shared/data/*"],
       "@/infrastructure/*": ["src/infrastructure/*"]
     },
     "target": "es5",

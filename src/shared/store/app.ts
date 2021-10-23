@@ -4,7 +4,7 @@ import { atom } from "recoil";
 const appState = atom<IApp>({
     key: "appState",
     default: {
-        theme: "dark"
+        theme: "light"
     }
 });
 

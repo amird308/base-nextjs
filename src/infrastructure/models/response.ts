@@ -1,9 +1,7 @@
-interface IResponse<d = any> {
-	Data: d,
-	Meta: {
-		Success: boolean,
-		Code: number,
-		Messages: string[],
-	},
+interface IBaseResponse {
+    results: boolean
+    message: string
 }
+
+type IResponse<d = {}> = IBaseResponse & d;
 export default IResponse;

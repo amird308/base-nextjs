@@ -1,84 +1,71 @@
 import React, {FC} from "react";
-import {
-    AppBar, Badge, Box, Drawer, IconButton, List,
-    ListItem, ListItemIcon, ListItemText, Toolbar, Typography
-} from "@material-ui/core";
 import useStyles from "./style";
-import clsx from "clsx";
-import Icon from "@/components/icon";
-import useTheme from "@/hooks/theme";
+import {Box, Button, Container} from "@material-ui/core";
+import SvgHeaderLanding from "/public/svg/header-landing-logo.svg";
+import LogoText from "/public/images/logo-text.png";
+import Link from "@/components/link";
+import {LINKS} from "@/constants/links";
+import Image from "next/image";
 
 const Layout: FC = (props) => {
     const styles = useStyles();
-    const [open, setOpen] = React.useState(true);
-    const theme = useTheme();
-    const handleDrawerToggle = () => {
-        setOpen((pre) => (!pre));
-    };
     return (
-        <div className={styles.root}>
-            <AppBar
-                position="fixed"
-                className={clsx(styles.appBar, {
-                    [styles.appBarShiftOpen]: open,
-                    [styles.appBarShiftClose]: !open,
-                })}
-            >
-                <Toolbar className={styles.toolbar}>
-                    <Typography variant="h6" noWrap>
-                        hi man
-                    </Typography>
-                    <Box p={2}>
-                        <IconButton>
-                            <Badge badgeContent={4} color="secondary">
-                                <Icon ltrIcon={"notifications_none"}/>
-                            </Badge>
-                        </IconButton>
-                        <IconButton>
-                            <Icon ltrIcon={"account_circle"}/>
-                        </IconButton>
-                        <IconButton onClick={()=> theme.changeTheme()}>
-                            <Icon ltrIcon={theme.currentTheme ==="dark" ? "brightness_2" : "wb_sunny"}/>
-                        </IconButton>
-                    </Box>
-                </Toolbar>
-            </AppBar>
-            <Drawer
-                variant="permanent"
-                className={clsx(styles.drawer, {
-                    [styles.drawerOpen]: open,
-                    [styles.drawerClose]: !open,
-                })}
-                classes={{
-                    paper: clsx({
-                        [styles.drawerOpen]: open,
-                        [styles.drawerClose]: !open,
-                    }),
-                }}
-            >
-                <div className={styles.toolbar}>
-                    <IconButton onClick={handleDrawerToggle}>
-                        <Icon ltrIcon={open ? "arrow_back_ios" : "menu"} rtlIcon={open ? "arrow_forward_ios" : "menu"}/>
-                    </IconButton>
+        <Container maxWidth={"md"}>
+            <div className={styles.header}>
+                <div>
+                    <Image src={SvgHeaderLanding}/>
                 </div>
-                <List>
-                    {["All mail", "Trash", "Spam"].map((text, index) => (
-                        <ListItem
-                            className={clsx(styles.menuItem, {
-                                /*             [styles.menuItemActive]: true*/
-                            })}
-                            button key={text}>
-                            <ListItemIcon>{index % 2 === 0 ? <Icon rtlIcon={"star"}/> :
-                                <Icon rtlIcon={"star"}/>}</ListItemIcon>
-                            <ListItemText primary={text}/>
-                        </ListItem>
-                    ))}
-                </List>
-            </Drawer>
-            <main className={styles.content}>
-                {props.children}
-            </main>
-        </div>
+                <Box display={"flex"}>
+                    <Link href={LINKS.HOME}>
+                        <Button className={styles.buttonLinks}>
+                            Home Page
+                        </Button>
+                    </Link>
+                    <Link href={LINKS.EXAMPLES}>
+                        <Button className={styles.buttonLinks}>
+                            Example
+                        </Button>
+                    </Link>
+                    <Link href={LINKS.ABOUT_US}>
+                        <Button className={styles.buttonLinks}>
+                            About Us
+                        </Button>
+                    </Link>
+                    <Link href={LINKS.LOGIN}>
+                        <Button className={styles.buttonLogin}  variant={"outlined"}>
+                            Login
+                        </Button>
+                    </Link>
+
+                    <Link href={LINKS.REGISTER}>
+                        <Button className={styles.buttonLogin} color={"primary"} variant={"contained"}>
+                            Register
+                        </Button>
+                    </Link>
+                </Box>
+            </div>
+            {props.children}
+            <div className={styles.footer}>
+                <Image src={LogoText} height={32} width={272} />
+                <Box display={"flex"} mt={2}>
+                    <Link href={LINKS.HOME}>
+                        <Button className={styles.buttonLinks}>
+                            Home Page
+                        </Button>
+                    </Link>
+                    <Link href={LINKS.EXAMPLES}>
+                        <Button className={styles.buttonLinks}>
+                            Example
+                        </Button>
+                    </Link>
+                    <Link href={LINKS.ABOUT_US}>
+                        <Button className={styles.buttonLinks}>
+                            About Us
+                        </Button>
+                    </Link>
+                </Box>
+            </div>
+        </Container>
     );
 };
 
