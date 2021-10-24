@@ -4,5 +4,5 @@ const {publicRuntimeConfig} = getConfig();
 export const API_URL = publicRuntimeConfig.API_URL;
 
 export const API = {
-
+    CHECK_TOKEN:""
 };

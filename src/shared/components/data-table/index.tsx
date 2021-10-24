@@ -1,6 +1,6 @@
 import React from "react";
 import useStyles from "@/components/data-table/style";
-import {DataGrid} from '@mui/x-data-grid';
+import {DataGrid} from "@mui/x-data-grid";
 
 interface IDataTableProps {
     columns: string[]
@@ -14,8 +14,8 @@ const cleanNames = (obj: any) => {
             newObj[propName] = obj[propName];
         }
     }
-    return newObj
-}
+    return newObj;
+};
 
 const DataTable = (props: IDataTableProps) => {
     const styles = useStyles();
@@ -31,5 +31,5 @@ const DataTable = (props: IDataTableProps) => {
             }} columns={cols} rows={_rows} columnBuffer={2}/>
         </>
     );
-}
+};
 export default DataTable;

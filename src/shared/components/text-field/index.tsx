@@ -7,7 +7,7 @@ type StyleProps = {
     labelOffset: number | undefined;
 };
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
     inputLabelRoot: {
         display: ({labelOffset}: StyleProps) =>
             labelOffset !== undefined ? "block" : "none",
@@ -19,13 +19,17 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const TextField: React.FC<TextFieldProps & { startAdornmentText?: any }> = ({startAdornmentText, ...props}) => {
+export type ITextFieldProps = TextFieldProps & {
+    startAdornment?: any
+}
+
+const TextField: React.FC<ITextFieldProps> = ({startAdornment, ...props}) => {
     const startAdornmentRef = useRef<HTMLDivElement>(null);
     const [labelOffset, setLabelOffset] = useState<number>();
     const [shrink, setShrink] = useState<boolean>(false);
     useEffect(() => {
         setLabelOffset(startAdornmentRef.current?.offsetWidth);
-    }, [startAdornmentText]);
+    }, [startAdornment]);
 
     const classes = useStyles({
         labelOffset,
@@ -64,7 +68,7 @@ const TextField: React.FC<TextFieldProps & { startAdornmentText?: any }> = ({sta
                 shrink: shrink,
                 classes: {
                     shrink: clsx(
-                        startAdornmentText && classes.inputLabelShrink,
+                        startAdornment && classes.inputLabelShrink,
                         props.InputLabelProps?.classes?.shrink
                     ),
                     root: clsx(
@@ -82,7 +86,7 @@ const TextField: React.FC<TextFieldProps & { startAdornmentText?: any }> = ({sta
                         variant="outlined"
                         position="start"
                     >
-                        {startAdornmentText}
+                        {startAdornment}
                     </InputAdornment>
                 ),
             ...props?.InputProps

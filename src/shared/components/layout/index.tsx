@@ -1,8 +1,7 @@
 import React, {FC} from "react";
 import useStyles from "./style";
 import {Box, Button, Container} from "@material-ui/core";
-import SvgHeaderLanding from "/public/svg/header-landing-logo.svg";
-import LogoText from "/public/images/logo-text.png";
+import SvgHeaderLanding from "/public/svg/logo.svg";
 import Link from "@/components/link";
 import {LINKS} from "@/constants/links";
 import Image from "next/image";
@@ -19,11 +18,6 @@ const Layout: FC = (props) => {
                     <Link href={LINKS.HOME}>
                         <Button className={styles.buttonLinks}>
                             Home Page
-                        </Button>
-                    </Link>
-                    <Link href={LINKS.EXAMPLES}>
-                        <Button className={styles.buttonLinks}>
-                            Example
                         </Button>
                     </Link>
                     <Link href={LINKS.ABOUT_US}>
@@ -46,16 +40,11 @@ const Layout: FC = (props) => {
             </div>
             {props.children}
             <div className={styles.footer}>
-                <Image src={LogoText} height={32} width={272} />
+                <Image src={SvgHeaderLanding} height={32} width={272} />
                 <Box display={"flex"} mt={2}>
                     <Link href={LINKS.HOME}>
                         <Button className={styles.buttonLinks}>
                             Home Page
-                        </Button>
-                    </Link>
-                    <Link href={LINKS.EXAMPLES}>
-                        <Button className={styles.buttonLinks}>
-                            Example
                         </Button>
                     </Link>
                     <Link href={LINKS.ABOUT_US}>

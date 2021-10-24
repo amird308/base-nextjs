@@ -1,5 +1,4 @@
 import {makeStyles} from "@material-ui/core";
-import registerBgImg from "../../../resources/images/register-bg.png";
 
 export const useStyle = makeStyles((theme) => ({
     background: {
@@ -20,7 +19,6 @@ export const useStyle = makeStyles((theme) => ({
         "&:after": {
             content: "''",
             position: "absolute",
-            backgroundImage: `url(${registerBgImg.src})`,
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
             opacity: 0.11,

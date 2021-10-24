@@ -8,7 +8,7 @@ import {
     NoSsr,
     Typography
 } from "@material-ui/core";
-import mvpLogoImg from "../../../resources/images/mvp-logo.svg";
+import mvpLogoImg from "/public/svg/logo.svg";
 import {Controller, useForm} from "react-hook-form";
 import Icon from "@/components/icon";
 import {VALIDATIONS_RULES} from "@/constants/validations_rules";
@@ -18,7 +18,7 @@ import {useStyle} from "@/modules/register/style";
 import useRegister from "@/modules/register/hooks/register";
 import Link from "@/components/link";
 import {LINKS} from "@/constants/links";
-import TextField from "@/components/form/input";
+import TextField from "@/components/text-field";
 
 
 const Register = () => {
